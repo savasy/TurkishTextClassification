@@ -16,16 +16,28 @@ code_to_label={
 
 
 ## Data 
+The following Turkish benchmark dataset is used for fine-tuning
+
 https://www.kaggle.com/savasy/ttc4900
 
 ## Quick Start
 
+Bewgin with installing transformers as follows
+> pip install transformers
 
 ```
+# Code:
+# import libraries
 from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
 tokenizer= AutoTokenizer.from_pretrained("savasy/bert-turkish-text-classification")
+
+# build and load model, it take time depending on your internet connection
 model= AutoModelForSequenceClassification.from_pretrained("savasy/bert-turkish-text-classification")
+
+# make pipeline
 nlp=pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+
+# apply model
 nlp("bla bla")
 # [{'label': 'LABEL_2', 'score': 0.4753005802631378}]
 
@@ -43,7 +55,6 @@ code_to_label[nlp("bla bla")[0]['label']]
 ```
 
 ## How the model was trained
-
 
 ```
 
@@ -81,3 +92,7 @@ model = ClassificationModel(
 )
 model.train_model(train_df, acc=sklearn.metrics.accuracy_score)
 ```
+For other training models please check https://simpletransformers.ai/
+
+
+For the detailed usage of Turkish Text Classification please check [python notebook](https://github.com/savasy/TurkishTextClassification/blob/master/Bert_base_Text_Classification_for_Turkish.ipynb)
