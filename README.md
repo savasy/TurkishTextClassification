@@ -1,6 +1,6 @@
 # Turkish Text Classification
 
-This model is a fine-tune model of https://github.com/stefan-it/turkish-bert by using text classification data where there are 7 categories
+This model is a fine-tune model of https://github.com/stefan-it/turkish-bert by using text classification data where there are 7 categories as follows
 
 ```
 code_to_label={
@@ -11,6 +11,7 @@ code_to_label={
  'LABEL_4': 'siyaset ',
  'LABEL_5': 'spor ',
  'LABEL_6': 'teknoloji '}
+ 
  ```
 
 
@@ -19,6 +20,9 @@ https://www.kaggle.com/savasy/ttc4900
 
 ## Quick Start
 
+test 
+
+```
 tokenizer= AutoTokenizer.from_pretrained("savasy/bert-turkish-text-classification")
 model= AutoModelForSequenceClassification.from_pretrained("savasy/bert-turkish-text-classification")
 nlp=pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
@@ -36,10 +40,12 @@ code_to_label={
  
 code_to_label[nlp("bla bla")[0]['label']]
 
+```
+
 ## How the model was trained
 
 
-```
+
 ## loading data for Turkish text classification
 import pandas as pd
 # https://www.kaggle.com/savasy/ttc4900
