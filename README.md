@@ -20,9 +20,9 @@ https://www.kaggle.com/savasy/ttc4900
 
 ## Quick Start
 
-test 
 
 ```
+from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
 tokenizer= AutoTokenizer.from_pretrained("savasy/bert-turkish-text-classification")
 model= AutoModelForSequenceClassification.from_pretrained("savasy/bert-turkish-text-classification")
 nlp=pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
@@ -45,6 +45,7 @@ code_to_label[nlp("bla bla")[0]['label']]
 ## How the model was trained
 
 
+```
 
 ## loading data for Turkish text classification
 import pandas as pd
