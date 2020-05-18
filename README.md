@@ -39,7 +39,7 @@ code_to_label={
  'LABEL_6': 'teknoloji '}
  
 code_to_label[nlp("bla bla")[0]['label']]
-
+# > 'kultur '
 ```
 
 ## How the model was trained
